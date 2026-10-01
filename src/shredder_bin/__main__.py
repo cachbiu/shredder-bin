@@ -6,10 +6,12 @@ import sys
 
 from PyQt6.QtWidgets import QApplication
 
+from shredder_bin.shortcut import ensure_desktop_shortcut
 from shredder_bin.widget import ShredderWidget
 
 
 def main() -> int:
+    ensure_desktop_shortcut()
     app = QApplication(sys.argv)
     app.setQuitOnLastWindowClosed(True)
     widget = ShredderWidget()

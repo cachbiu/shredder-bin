@@ -24,8 +24,9 @@ from PyQt6.QtWidgets import (
     QWidget,
 )
 
-from shredder_bin.recycle import open_recycle_bin, send_to_recycle
 from shredder_bin.paths import collect_local_paths
+from shredder_bin.recycle import open_recycle_bin, send_to_recycle
+from shredder_bin.resources import asset_path
 
 WIDGET_WIDTH = 250
 WIDGET_HEIGHT = 192
@@ -33,7 +34,7 @@ CLICK_SLOP = 6
 
 
 def _gif_path() -> Path:
-    return Path(__file__).resolve().parents[2] / "assets" / "shredder.gif"
+    return asset_path("shredder.gif")
 
 
 class IdleBin(QWidget):
